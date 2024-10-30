@@ -10,8 +10,10 @@ def setup_db():
     print(f"{settings.DB_NAME=}")
     assert settings.MODE == "TEST"
     Base.metadata.drop_all(engine)
-    # yield
     Base.metadata.create_all(engine)
+    # Base.metadata.create_all(engine)
+    # yield
+    # Base.metadata.drop_all(engine)
 
 
 @pytest.fixture
